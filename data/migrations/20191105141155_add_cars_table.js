@@ -10,7 +10,6 @@ exports.up = function(knex) {
         table.float('milage', 255).notNullable();
         table.string('titleStatus', 255);
         table.string('transmissionType', 128);
-    
         table.timestamps(true, true);
       });
 };

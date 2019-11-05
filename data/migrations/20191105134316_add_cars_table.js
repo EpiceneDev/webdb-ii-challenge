@@ -4,12 +4,12 @@ exports.up = function(knex) {
         // increments() adds a primary key, called 'id' as an auto-increment integer, not null and unique
         table.increments();
 
-        table.string('name', 128).notNullable();
-        table.string('species', 64).notNullable();
-        table.string('breed', 64);
-        table.string('food', 255);
-        table.float('weight');
-        table.string('weightUnit', 64);
+        table.string('vin', 128).notNullable();
+        table.string('make', 64).notNullable();
+        table.string('model', 64).notNullable();
+        table.string('milage', 255).notNullable();;
+        table.float('transmissionType', 255);
+        table.string('titleStatus', 64);
         table.timestamps(true, true);
       })
 };

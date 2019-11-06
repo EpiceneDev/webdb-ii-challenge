@@ -21,7 +21,6 @@ exports.up = function(knex) {
         })
         .createTable('sales', function(sales) {
             sales.increments();
-            sales.('text').notNullable();
       
             sales
               .integer('user_id')

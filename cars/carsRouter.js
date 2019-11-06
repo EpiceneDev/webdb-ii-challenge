@@ -1,10 +1,12 @@
 const express = require("express");
-const knex = require("../data/car-dealer.db3");
+const knex = require('knex');
+const KnexConfig = require('../knexfile.js');
+const db = knex(KnexConfig.development);
 const router = express.Router();
 
 
 router.get("/", (req, res) => {
-  knex
+  db
     .select("*")
     .from("cars")
     .then(cars => {
@@ -16,7 +18,7 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  knex
+  db
     .insert(req.body, "id")
     .into("cars")
     .then(ids => {
